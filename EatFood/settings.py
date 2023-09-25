@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -76,7 +77,7 @@ WSGI_APPLICATION = 'EatFood.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME':config('DB_NAME'),
         'USER':config('DB_USER'),
         'PASSWORD': config('DB_PASSWORD'),
@@ -84,7 +85,7 @@ DATABASES = {
     }
 }
 
-
+AUTH_USER_MODEL='accounts.User'
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
@@ -122,6 +123,10 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR / 'static'
 STATICFILES_DIRS = ['EatFood/static']
+
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR /'media'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
