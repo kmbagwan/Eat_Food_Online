@@ -21,3 +21,4 @@ def post_save_create_profile_reciver(sender,instance,created,**kwrgs):
 @receiver(pre_save,sender=User)
 def pre_save_profile_reciver(sender,instance,**kwargs):
     print(instance.username,"this user is being saved")
+
